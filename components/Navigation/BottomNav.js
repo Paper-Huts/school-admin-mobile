@@ -1,0 +1,53 @@
+import React from 'react'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import { StyleSheet } from 'react-native'
+
+const Tab = createMaterialBottomTabNavigator()
+
+const BottomNav = () => {
+  return (
+    <Tab.Navigator
+      initialRouteName="FeePayment"
+      shifting={true}
+      sceneAnimationEnabled={false}
+      style={styles.bottomNav}
+    >
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: "home-account"
+        }}
+      />
+      <Tab.Screen
+        name="FeePayment"
+        component={FeePayment}
+        options={{
+          tabBarIcon: 'cash-multiple',
+        }}
+      />
+      <Tab.Screen
+        name="Attendance"
+        component={Attendance}
+        options={{
+          tabBarIcon: 'account-check',
+        }}
+      />
+      <Tab.Screen
+        name="Registration"
+        component={Registration}
+        options={{
+          tabBarIcon: 'account-plus',
+        }}
+      />
+    </Tab.Navigator>
+  )
+}
+
+const styles = StyleSheet.create({
+  bottomNav: {
+    backgroundColor: '#FFFFFF'
+  }
+})
+
+export default BottomNav
