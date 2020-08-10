@@ -2,6 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native'
 import { Provider as PaperProvider, DefaultTheme, configureFonts } from 'react-native-paper'
+import { NavigationContainer } from '@react-navigation/native'
+
+import BottomNav from './components/Navigation/BottomNav';
+import TopNav from './components/Navigation/TopNav'
 
 const fontConfig = {
   default: {
@@ -28,6 +32,8 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
+    primary: '#FFFFFF',
+    backgroundColor: '#FFFFFF',
     text: '#000000',
   },
   fonts: configureFonts(fontConfig),

@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
 import { StyleSheet } from 'react-native'
 
-const Tab = createMaterialBottomTabNavigator()
+import HomeScreen from '../HomeScreen/HomeScreen'
+import FeePayment from '../FeePayment/FeePayment'
+import Attendance from '../Attendance/Attendance'
+import Registration from '../Registration/Registration'
+
+const Tab = createMaterialBottomTabNavigator();
 
 const BottomNav = () => {
   return (
@@ -10,13 +15,13 @@ const BottomNav = () => {
       initialRouteName="FeePayment"
       shifting={true}
       sceneAnimationEnabled={false}
-      style={styles.bottomNav}
+      barStyle={styles.bottomNav}
     >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: "home-account"
+          tabBarIcon: 'home-account',
         }}
       />
       <Tab.Screen
@@ -41,8 +46,8 @@ const BottomNav = () => {
         }}
       />
     </Tab.Navigator>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   bottomNav: {
