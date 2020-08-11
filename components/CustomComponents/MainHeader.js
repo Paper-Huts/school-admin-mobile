@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   header: {
     fontFamily: 'Arial',
-    fontWeight: '120',
+    fontWeight: 'bold',
     fontSize: 25,
   },
 })

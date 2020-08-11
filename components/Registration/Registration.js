@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly'
   },
   formItem: {
-    backgroundColor: 'inherit',
     width: '80%',
   },
   formButtonContent: {
