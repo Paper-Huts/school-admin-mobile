@@ -35,6 +35,7 @@ const theme = {
     primary: '#FFFFFF',
     backgroundColor: '#FFFFFF',
     text: '#000000',
+    accent: 'green'
   },
   fonts: configureFonts(fontConfig),
 }

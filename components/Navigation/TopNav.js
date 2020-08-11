@@ -5,7 +5,7 @@ const TopNav = () => {
   return (
     <Appbar.Header>
       <Appbar.Content title="School Admin" />
-      <Appbar.Action icon="dots-vertical" />
+      <Appbar.Action icon="cogs" color="#0085F6" size={30} />
     </Appbar.Header>
   );
 };

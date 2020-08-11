@@ -15,9 +15,9 @@ const HomeScreen = () => {
       <Surface style={styles.cardContainer}>
         {[
           { id: 1, title: 'Pay Feeding Fee', icon: 'food', iconBackground: '#ABF264', iconColor: 'black' },
-          { id: 2, title: 'Take Attendance', icon: 'account-check', iconBackground: '#FFC1FF', iconColor: 'black' },
+          { id: 2, title: 'Take Attendance', icon: 'format-list-bulleted', iconBackground: '#FFC1FF', iconColor: 'black' },
           { id: 3, title: 'Pay School Fees', icon: 'cash-multiple', iconBackground: '#00A284', iconColor: 'white' },
-          { id: 4, title: 'Add New Student', icon: 'account-plus', iconBackground: '#BCE0FD', iconColor: 'black' },
+          { id: 4, title: 'Add New Student', icon: 'account-plus', iconBackground: '#BCFDC5', iconColor: 'black' },
         ].map(({id, title, icon, iconBackground, iconColor}) => (
           <MainCard key={`${id}-${_.snakeCase(title)}`} title={title} icon={icon}  style={styles.card} iconBackground={iconBackground} iconColor={iconColor} />
         ))}
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     fontSize: 20
   },
   divider: {
-    color: 'white',
     backgroundColor: 'white',
     width: '90%',
   },

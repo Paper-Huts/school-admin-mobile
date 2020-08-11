@@ -1,14 +1,24 @@
 import React from 'react'
-import { Surface, Title, Divider } from 'react-native-paper'
-import { StyleSheet } from 'react-native'
+import { Surface } from 'react-native-paper'
+import { StyleSheet, View } from 'react-native'
+
+import MainHeader from '../CustomComponents/MainHeader'
+import SubHeader from '../CustomComponents/SubHeader'
 
 const Attendance = () => {
   return (
     <Surface style={styles.screenContainer}>
-      <Surface style={styles.screenTitleContainer}>
-        <Title style={styles.screenTitle}>Attendance</Title>
-      <Divider style={styles.divider} />
-      </Surface>
+      <View style={styles.screenTitleContainer}>
+        <MainHeader 
+          header='Attendance' 
+          headerIcon='format-list-bulleted'
+          iconBackground="#FFC1FF"
+          iconColor='#030303'
+        />
+        <SubHeader
+          title='New Student'
+        />
+      </View>
       <Surface style={styles.cardContainer}>
 
       </Surface>
@@ -22,19 +32,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   screenTitleContainer: {
-    flex: 1.2,
-    justifyContent: 'flex-end',
+    flex: 2,
+    justifyContent: 'flex-start',
     backgroundColor: '#BCE0FD',
-    paddingLeft: 15,
-  },
-  screenTitle: {
-    fontFamily: 'Arial',
-    fontWeight: '100',
-    fontSize: 20
-  },
-  divider: {
-    backgroundColor: 'white',
-    width: '90%',
   },
   cardContainer: {
     flex: 8,

@@ -3,7 +3,6 @@ import { Card, Title, useTheme } from 'react-native-paper'
 import { StyleSheet } from 'react-native'
 
 const SmallCard = ({ title }) => {
-  const { colors } = useTheme()
   return (
     <Card style={styles.container}>
       <Card.Content style={styles.content}>
@@ -15,19 +14,12 @@ const SmallCard = ({ title }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
+    borderRadius: 10,
   },
   content: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  title: {
-    // color: colors.text
-  }
 })
 
 export default SmallCard

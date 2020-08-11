@@ -12,7 +12,7 @@ const Tab = createMaterialBottomTabNavigator();
 const BottomNav = () => {
   return (
     <Tab.Navigator
-      initialRouteName="FeePayment"
+      initialRouteName="Home"
       shifting={true}
       sceneAnimationEnabled={false}
       barStyle={styles.bottomNav}
@@ -25,17 +25,17 @@ const BottomNav = () => {
         }}
       />
       <Tab.Screen
+        name="Attendance"
+        component={Attendance}
+        options={{
+          tabBarIcon: 'format-list-bulleted',
+        }}
+      />
+      <Tab.Screen
         name="FeePayment"
         component={FeePayment}
         options={{
           tabBarIcon: 'cash-multiple',
-        }}
-      />
-      <Tab.Screen
-        name="Attendance"
-        component={Attendance}
-        options={{
-          tabBarIcon: 'account-check',
         }}
       />
       <Tab.Screen

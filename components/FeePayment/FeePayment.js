@@ -1,9 +1,12 @@
 import React from 'react'
-import { Surface, Title, Divider, Avatar } from 'react-native-paper'
+import { Surface } from 'react-native-paper'
 import { StyleSheet, View } from 'react-native'
 import { classes } from '../MockData/ClassData'
 import SmallCard from '../CustomComponents/SmallCard'
 import { FlatList } from 'react-native-gesture-handler'
+
+import MainHeader from '../CustomComponents/MainHeader'
+import SubHeader from '../CustomComponents/SubHeader'
 
 const FeePayment = () => {
   const classData = Object.values(classes)
@@ -11,13 +14,17 @@ const FeePayment = () => {
 
   return (
     <Surface style={styles.screenContainer}>
-      <Surface style={styles.screenTitleContainer}>
-        <View style={styles.screenTitle}>
-        <Title>Fee Payment</Title>
-        <Avatar.Icon icon='cash-multiple' style={styles.titleIcon} size={40} />
-        </View>
-      <Divider style={styles.divider} />
-      </Surface>
+      <View style={styles.screenTitleContainer}>
+        <MainHeader 
+          header='Fee Payment' 
+          headerIcon='cash-multiple'
+          iconBackground="#00A284"
+          iconColor='#F7F7F7'
+        />
+        <SubHeader
+          title='New Student'
+        />
+      </View>
       <Surface style={styles.cardContainer}>
         <FlatList
           data={classData}
@@ -37,27 +44,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   screenTitleContainer: {
-    flex: 1.2,
-    justifyContent: 'flex-end',
+    flex: 2,
+    justifyContent: 'flex-start',
     backgroundColor: '#BCE0FD',
-    paddingLeft: 15,
-    paddingRight: 15,
-  },
-  screenTitle: {
-    fontFamily: 'Arial',
-    fontWeight: '100',
-    fontSize: 40,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
-    backgroundColor: '#BCE0FD',
-  },
-  titleIcon: {
-    backgroundColor: 'white',
-  },
-  divider: {
-    backgroundColor: 'white',
-    width: '80%',
   },
   cardContainer: {
     flex: 8,
@@ -66,7 +55,6 @@ const styles = StyleSheet.create({
   cardList: {
     flexGrow: 1,
     justifyContent: 'space-evenly',
-    alignItems: 'space-between',
   }
 })
 
