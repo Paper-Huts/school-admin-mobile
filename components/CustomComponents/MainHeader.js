@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    fontFamily: 'Arial',
     fontWeight: 'bold',
     fontSize: 25,
   },

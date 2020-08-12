@@ -1,5 +1,5 @@
 import React from 'react'
-import { Surface, Card, Title, Divider } from 'react-native-paper'
+import { Title, Divider } from 'react-native-paper'
 import { StyleSheet, View } from 'react-native'
 import _ from 'lodash'
 
@@ -7,22 +7,30 @@ import MainCard from '../CustomComponents/MainCard'
 
 const HomeScreen = () => {
   return (
-    <Surface style={styles.screenContainer}>
-      <Surface style={styles.screenTitleContainer}>
+    <View style={styles.screenContainer}>
+      <View style={styles.screenTitleContainer}>
         <Title style={styles.screenTitle}>Quick Links</Title>
       <Divider style={styles.divider} />
-      </Surface>
-      <Surface style={styles.cardContainer}>
+      </View>
+      <View style={styles.cardContainer}>
         {[
-          { id: 1, title: 'Pay Feeding Fee', icon: 'food', iconBackground: '#ABF264', iconColor: 'black' },
-          { id: 2, title: 'Take Attendance', icon: 'format-list-bulleted', iconBackground: '#FFC1FF', iconColor: 'black' },
-          { id: 3, title: 'Pay School Fees', icon: 'cash-multiple', iconBackground: '#00A284', iconColor: 'white' },
-          { id: 4, title: 'Add New Student', icon: 'account-plus', iconBackground: '#BCFDC5', iconColor: 'black' },
-        ].map(({id, title, icon, iconBackground, iconColor}) => (
-          <MainCard key={`${id}-${_.snakeCase(title)}`} title={title} icon={icon}  style={styles.card} iconBackground={iconBackground} iconColor={iconColor} />
+          { id: 1, title: 'Pay Feeding Fee', icon: 'food', iconBackground: '#ABF264', iconColor: 'black', path: 'FeePayment' },
+          { id: 2, title: 'Take Attendance', icon: 'format-list-bulleted', iconBackground: '#FFC1FF', iconColor: 'black', path: 'Attendance' },
+          { id: 3, title: 'Pay School Fees', icon: 'cash-multiple', iconBackground: '#00A284', iconColor: 'white', path: 'FeePayment' },
+          { id: 4, title: 'Add New Student', icon: 'account-plus', iconBackground: '#BCFDC5', iconColor: 'black', path: 'Registration' },
+        ].map(({id, title, icon, iconBackground, iconColor, navigation, path}) => (
+          <MainCard 
+            key={`${id}-${_.snakeCase(title)}`} 
+            title={title} 
+            icon={icon}  
+            style={styles.card} 
+            iconBackground={iconBackground} 
+            iconColor={iconColor} 
+            navigateTo={path}
+          />
         ))}
-      </Surface>
-    </Surface>
+      </View>
+    </View>
   )
 }
 
@@ -32,22 +40,21 @@ const styles = StyleSheet.create({
     flex: 1
   },
   screenTitleContainer: {
-    flex: 1.2,
+    flex: 2,
     justifyContent: 'flex-end',
     backgroundColor: '#BCE0FD',
     paddingLeft: 15,
   },
   screenTitle: {
-    fontFamily: 'Arial',
-    fontWeight: '100',
-    fontSize: 20
+    fontWeight: 'bold',
+    fontSize: 25
   },
   divider: {
     backgroundColor: 'white',
     width: '90%',
   },
   cardContainer: {
-    flex: 8,
+    flex: 10,
     backgroundColor: '#BCE0FD',
     alignItems: 'center',
     justifyContent: 'space-evenly'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Surface, TextInput, Button, IconButton } from 'react-native-paper'
+import { TextInput, Button, IconButton } from 'react-native-paper'
 import { StyleSheet, View } from 'react-native'
 
 import MainHeader from '../CustomComponents/MainHeader'
@@ -12,7 +12,7 @@ const Registration = () => {
   const [dateOfBirth, setDateOfBirth] = useState('')
   const [grade, setGrade] = useState('')
   return (
-    <Surface style={styles.screenContainer}>
+    <View style={styles.screenContainer}>
       <View style={styles.screenTitleContainer}>
         <MainHeader 
           header='Registration' 
@@ -24,7 +24,7 @@ const Registration = () => {
           title='New Student'
         />
       </View>
-      <Surface style={styles.cardContainer}>
+      <View style={styles.cardContainer}>
         <TextInput
           style={styles.formItem}
           selectionColor='black'
@@ -56,12 +56,12 @@ const Registration = () => {
           value={grade}
           onChange={grade => setGrade(grade)}
         />
-        <Button mode='contained' contentStyle={styles.formButtonContent} style={styles.formButton}>
+        <Button mode='contained' contentStyle={styles.formButtonContent} color='#F7F7F7' style={styles.formButton} onPress={() => alert('Registration functionality not completed')}>
           Submit
-          <IconButton icon='send' color='white' size={10} /> 
+          <IconButton icon='send' color='white' size={12} /> 
         </Button>
-      </Surface>
-    </Surface>
+      </View>
+    </View>
   )
 }
 
@@ -72,11 +72,11 @@ const styles = StyleSheet.create({
   },
   screenTitleContainer: {
     flex: 2,
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     backgroundColor: '#BCE0FD',
   },
   cardContainer: {
-    flex: 8,
+    flex: 9,
     backgroundColor: '#BCE0FD',
     alignItems: 'center',
     justifyContent: 'space-evenly'
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
   },
   formButtonContent: {
     backgroundColor: 'green',
-    color: 'white'
   },
   formButton: {
     width: '80%',

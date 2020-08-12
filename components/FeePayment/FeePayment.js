@@ -1,19 +1,17 @@
 import React from 'react'
-import { Surface } from 'react-native-paper'
 import { StyleSheet, View } from 'react-native'
-import { classes } from '../MockData/ClassData'
-import SmallCard from '../CustomComponents/SmallCard'
 import { FlatList } from 'react-native-gesture-handler'
 
 import MainHeader from '../CustomComponents/MainHeader'
 import SubHeader from '../CustomComponents/SubHeader'
+import SmallCard from '../CustomComponents/SmallCard'
+import { classes } from '../MockData/ClassData'
 
 const FeePayment = () => {
   const classData = Object.values(classes)
-  console.log(classData)
 
   return (
-    <Surface style={styles.screenContainer}>
+    <View style={styles.screenContainer}>
       <View style={styles.screenTitleContainer}>
         <MainHeader 
           header='Fee Payment' 
@@ -22,19 +20,20 @@ const FeePayment = () => {
           iconColor='#F7F7F7'
         />
         <SubHeader
-          title='New Student'
+          title='Select a class'
         />
       </View>
-      <Surface style={styles.cardContainer}>
+      <View style={styles.cardContainer}>
         <FlatList
           data={classData}
           numColumns={2}
           contentContainerStyle={styles.cardList}
+          columnWrapperStyle={styles.cardRow}
           renderItem={itemData => (
             <SmallCard title={itemData.item.title} />
           )} />
-      </Surface>
-    </Surface>
+      </View>
+    </View>
   )
 }
 
@@ -45,15 +44,18 @@ const styles = StyleSheet.create({
   },
   screenTitleContainer: {
     flex: 2,
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     backgroundColor: '#BCE0FD',
   },
   cardContainer: {
-    flex: 8,
+    flex: 9,
     backgroundColor: '#BCE0FD',
-  }, 
+  },
   cardList: {
-    flexGrow: 1,
+    flex: 1,
+    justifyContent: 'space-evenly',
+  },
+  cardRow: {
     justifyContent: 'space-evenly',
   }
 })

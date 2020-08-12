@@ -16,9 +16,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     paddingLeft: 20,
     paddingRight: 20,
+    paddingBottom: 10,
   },
   subHeaderText: {
     color: 'black',
+    fontWeight: 'bold',
+    fontSize: 20
   },
   divider: {
     backgroundColor: 'white',
