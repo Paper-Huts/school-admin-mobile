@@ -5,7 +5,7 @@ import { StyleSheet, View } from 'react-native'
 import MainHeader from '../CustomComponents/MainHeader'
 import SubHeader from '../CustomComponents/SubHeader'
 
-const Registration = () => {
+const Registration = ({ navigation }) => {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [otherNames, setotherNames] = useState('')
@@ -30,33 +30,43 @@ const Registration = () => {
           selectionColor='black'
           label='First Name'
           value={firstName}
-          onChange={firstName => setFirstName(firstName)}
+          onChange={e => setFirstName(e.target.value)}
         />
         <TextInput
           style={styles.formItem}
           label='Last Name'
           value={lastName}
-          onChange={lastName => setLastName(lastName)}
+          onChange={e => setLastName(e.target.value)}
         />
         <TextInput
           style={styles.formItem}
           label='Other Names'
           value={otherNames}
-          onChange={otherNames => setotherNames(otherNames)}
+          onChange={e => setotherNames(e.target.value)}
         />
         <TextInput
           style={styles.formItem}
           label='Date Of Birth'
           value={dateOfBirth}
-          onChange={dateOfBirth => setDateOfBirth(dateOfBirth)}
+          onChange={e => setDateOfBirth(e.target.value)}
         />
         <TextInput
           style={styles.formItem}
           label='Grade/Class'
           value={grade}
-          onChange={grade => setGrade(grade)}
+          onChange={e => setGrade(e.target.value)}
         />
-        <Button mode='contained' contentStyle={styles.formButtonContent} color='#F7F7F7' style={styles.formButton} onPress={() => alert('Registration functionality not completed')}>
+        <Button 
+          mode='contained' 
+          contentStyle={styles.formButtonContent} 
+          color='#F7F7F7' style={styles.formButton} 
+          onPress={() => navigation.navigate('RegistrationConfirmation', {
+            firstName: firstName,
+            lastName: lastName,
+            otherNames: otherNames,
+            dateOfBirth: dateOfBirth,
+            grade: grade
+          })}>
           Submit
           <IconButton icon='send' color='white' size={12} /> 
         </Button>
