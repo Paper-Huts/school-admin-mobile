@@ -43,7 +43,7 @@ const theme = {
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <TopNav />
+      {/* <TopNav /> */}
       <StatusBar style="auto" />
       <NavigationContainer>
         <BottomNav />

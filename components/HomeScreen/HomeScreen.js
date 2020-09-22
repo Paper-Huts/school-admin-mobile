@@ -18,7 +18,7 @@ const HomeScreen = () => {
           { id: 2, title: 'Take Attendance', icon: 'format-list-bulleted', iconBackground: '#FFC1FF', iconColor: 'black', path: 'Attendance' },
           { id: 3, title: 'Pay School Fees', icon: 'cash-multiple', iconBackground: '#00A284', iconColor: 'white', path: 'FeePayment' },
           { id: 4, title: 'Add New Student', icon: 'account-plus', iconBackground: '#BCFDC5', iconColor: 'black', path: 'Registration' },
-        ].map(({id, title, icon, iconBackground, iconColor, navigation, path}) => (
+        ].map(({id, title, icon, iconBackground, iconColor, path}) => (
           <MainCard 
             key={`${id}-${_.snakeCase(title)}`} 
             title={title} 

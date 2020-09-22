@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native'
 import HomeScreen from '../HomeScreen/HomeScreen'
 import FeePayment from '../FeePayment/FeePayment'
 import Attendance from '../Attendance/Attendance'
-import Registration from '../Registration/Registration'
+import RegistrationStackScreen from '../Registration/RegistrationStackScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -40,7 +40,7 @@ const BottomNav = () => {
       />
       <Tab.Screen
         name="Registration"
-        component={Registration}
+        component={RegistrationStackScreen}
         options={{
           tabBarIcon: 'account-plus',
         }}
