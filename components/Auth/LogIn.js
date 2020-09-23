@@ -14,13 +14,14 @@ const LogIn = ({ navigation }) => {
     <View style={styles.container} >
       <Image 
         style={styles.logo}
+        source={require('./../../assets/ph_placeholder_logo.png')}
       />
       <TextInput
         label="Email"
         value={email}
         onChangeText={(email) => setEmail(email)}
         mode="outlined"
-        placeholder="enter unm email address"
+        placeholder="enter email address"
       />
       <TextInput
         label="Password"

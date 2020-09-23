@@ -39,10 +39,10 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#FFFFFF",
+    primary: "#2E86AB",
     backgroundColor: "#FFFFFF",
     text: "#000000",
-    accent: "green",
+    accent: "#BCE0FD",
   },
   fonts: configureFonts(fontConfig),
 };
