@@ -1,10 +1,14 @@
 import React from 'react'
 import { Card, Title } from 'react-native-paper'
 import { StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
-const SmallCard = ({ title }) => {
+const SmallCard = ({ title, path }) => {
+
+  const navigation = useNavigation()
+
   return (
-    <Card style={styles.container}>
+    <Card style={styles.container} onPress={() => navigation.navigate(path)}>
       <Card.Content style={styles.content}>
         <Title style={styles.title}>{title}</Title>
       </Card.Content>

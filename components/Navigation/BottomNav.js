@@ -3,9 +3,9 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { StyleSheet } from 'react-native'
 
 import HomeScreen from '../HomeScreen/HomeScreen'
-import FeePayment from '../FeePayment/FeePayment'
-import Attendance from '../Attendance/Attendance'
 import RegistrationStackScreen from '../Registration/RegistrationStackScreen';
+import FeesStackScreen from '../FeePayment/FeesStackScreen';
+import AttendanceStackScreen from '../Attendance/AttendanceStackScreen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -26,14 +26,14 @@ const BottomNav = () => {
       />
       <Tab.Screen
         name="Attendance"
-        component={Attendance}
+        component={AttendanceStackScreen}
         options={{
           tabBarIcon: 'format-list-bulleted',
         }}
       />
       <Tab.Screen
         name="FeePayment"
-        component={FeePayment}
+        component={FeesStackScreen}
         options={{
           tabBarIcon: 'cash-multiple',
         }}

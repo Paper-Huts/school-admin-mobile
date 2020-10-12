@@ -30,7 +30,7 @@ const FeePayment = () => {
           contentContainerStyle={styles.cardList}
           columnWrapperStyle={styles.cardRow}
           renderItem={itemData => (
-            <SmallCard title={itemData.item.title} />
+            <SmallCard title={itemData.item.title} path='ClassFees' />
           )} />
       </View>
     </View>
